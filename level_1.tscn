@@ -39,7 +39,7 @@ fov = 105.05
 [node name="assets" type="Node3D" parent="."]
 
 [node name="coin1" parent="assets" instance=ExtResource("5_lq82q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87765, 0.742173, 2.52983)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58413, 0.742173, -1.18753)
 
 [node name="Block1" parent="assets" instance=ExtResource("1_fb0jj")]
 transform = Transform3D(0.87733, 0.390557, -0.278849, -0.0959941, 0.712157, 0.695427, 0.470188, -0.583351, 0.662288, -0.238126, 4.4768, -1.53246)

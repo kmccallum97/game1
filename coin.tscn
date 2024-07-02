@@ -6,7 +6,7 @@
 height = 0.15
 radius = 0.3
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_qcfhk"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_8n1p3"]
 top_radius = 0.3
 bottom_radius = 0.3
 height = 0.15
@@ -15,10 +15,11 @@ height = 0.15
 script = ExtResource("1_2edhn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_yr17x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CylinderMesh_qcfhk")
+mesh = SubResource("CylinderMesh_8n1p3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
