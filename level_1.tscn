@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbrulpj4ty715"]
+[gd_scene load_steps=8 format=3 uid="uid://cbrulpj4ty715"]
 
 [ext_resource type="PackedScene" uid="uid://c7sonyxom4rb7" path="res://Block.tscn" id="1_fb0jj"]
 [ext_resource type="PackedScene" uid="uid://bl0x141vio2p7" path="res://character.tscn" id="2_p8d7o"]
 [ext_resource type="Texture2D" uid="uid://ccdxc5qs3chqn" path="res://icon.svg" id="3_og4qi"]
 [ext_resource type="Script" path="res://icon.gd" id="4_x35nm"]
+[ext_resource type="PackedScene" uid="uid://3xpgss2mhlv2" path="res://coin.tscn" id="5_lq82q"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2fhv8"]
 size = Vector3(10, 0.5, 10)
@@ -28,14 +29,6 @@ mesh = SubResource("BoxMesh_2fhv8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0287476, 0, 0)
 shape = SubResource("BoxShape3D_lt7si")
 
-[node name="blocks" type="Node3D" parent="."]
-
-[node name="Block1" parent="blocks" instance=ExtResource("1_fb0jj")]
-transform = Transform3D(0.87733, 0.390557, -0.278849, -0.0959941, 0.712157, 0.695427, 0.470188, -0.583351, 0.662288, -0.238126, 4.4768, -1.53246)
-
-[node name="Block2" parent="blocks" instance=ExtResource("1_fb0jj")]
-transform = Transform3D(0.87733, 0.390557, -0.278849, -0.0959941, 0.712157, 0.695427, 0.470188, -0.583351, 0.662288, 1.06712, 4.71248, -1.1799)
-
 [node name="Character" parent="." instance=ExtResource("2_p8d7o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63917, 0.611098, 1.45285)
 
@@ -43,7 +36,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63917, 0.611098, 1.45285)
 transform = Transform3D(1, 0, 0, 0, 0.554859, 0.831944, 0, -0.831944, 0.554859, -0.174213, 1.57874, 1.60746)
 fov = 105.05
 
-[node name="icon" type="Sprite3D" parent="."]
+[node name="assets" type="Node3D" parent="."]
+
+[node name="coin1" parent="assets" instance=ExtResource("5_lq82q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87765, 0.742173, 2.52983)
+
+[node name="Block1" parent="assets" instance=ExtResource("1_fb0jj")]
+transform = Transform3D(0.87733, 0.390557, -0.278849, -0.0959941, 0.712157, 0.695427, 0.470188, -0.583351, 0.662288, -0.238126, 4.4768, -1.53246)
+
+[node name="Block2" parent="assets" instance=ExtResource("1_fb0jj")]
+transform = Transform3D(0.87733, 0.390557, -0.278849, -0.0959941, 0.712157, 0.695427, 0.470188, -0.583351, 0.662288, 1.06712, 4.71248, -1.1799)
+
+[node name="icon" type="Sprite3D" parent="assets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.811169, 2.74251)
 texture = ExtResource("3_og4qi")
 script = ExtResource("4_x35nm")
