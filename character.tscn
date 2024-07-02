@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl0x141vio2p7"]
+[gd_scene load_steps=6 format=3 uid="uid://bl0x141vio2p7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1agan"]
-size = Vector3(1, 1, 0)
+[ext_resource type="Script" path="res://character.gd" id="1_7e0sb"]
+[ext_resource type="Texture2D" uid="uid://ccdxc5qs3chqn" path="res://icon.svg" id="2_nuqph"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_uxvdu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bnfba"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dmq8c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wp3ao"]
+albedo_texture = ExtResource("2_nuqph")
 
 [node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_7e0sb")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_1agan")
+shape = SubResource("BoxShape3D_bnfba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("QuadMesh_uxvdu")
+mesh = SubResource("QuadMesh_dmq8c")
+surface_material_override/0 = SubResource("StandardMaterial3D_wp3ao")
