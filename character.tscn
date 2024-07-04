@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bl0x141vio2p7"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_7e0sb"]
-[ext_resource type="Texture2D" uid="uid://kfav5vd3q0la" path="res://Asset/icon.svg" id="2_nuqph"]
+[ext_resource type="Texture2D" uid="uid://kfav5vd3q0la" path="res://Asset/2d models/icon.svg" id="2_nuqph"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bnfba"]
+size = Vector3(1, 1, 0.001)
 
 [sub_resource type="QuadMesh" id="QuadMesh_dmq8c"]
 

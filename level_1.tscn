@@ -1,18 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbrulpj4ty715"]
+[gd_scene load_steps=10 format=3 uid="uid://cbrulpj4ty715"]
 
 [ext_resource type="PackedScene" uid="uid://c7sonyxom4rb7" path="res://Block.tscn" id="1_fb0jj"]
 [ext_resource type="PackedScene" uid="uid://bl0x141vio2p7" path="res://character.tscn" id="2_p8d7o"]
-[ext_resource type="Texture2D" uid="uid://kfav5vd3q0la" path="res://Asset/icon.svg" id="3_og4qi"]
-[ext_resource type="Script" path="res://icon.gd" id="4_x35nm"]
 [ext_resource type="PackedScene" uid="uid://3xpgss2mhlv2" path="res://coin.tscn" id="5_lq82q"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0ix3"]
+albedo_color = Color(0.115, 0.5, 0.24975, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_2fhv8"]
+material = SubResource("StandardMaterial3D_y0ix3")
 size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lt7si"]
 size = Vector3(10, 0.5, 10)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7weln"]
+sky_top_color = Color(1, 0.47, 0.805667, 1)
+sky_horizon_color = Color(0.5246, 0.57491, 0.86, 1)
+ground_horizon_color = Color(0.52549, 0.576471, 0.858824, 1)
+ground_curve = 0.017411
+
+[sub_resource type="Sky" id="Sky_ouyfw"]
+sky_material = SubResource("ProceduralSkyMaterial_7weln")
+
+[sub_resource type="Environment" id="Environment_1kqlm"]
+background_mode = 2
+sky = SubResource("Sky_ouyfw")
+
 [node name="level1" type="Node3D"]
+transform = Transform3D(1.00145, 0, 0, 0, 1.00145, 0, 0, 0, 1.00145, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.678647, 0.734465, 0, -0.734465, 0.678647, 0, 5.54589, 6)
@@ -45,9 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58413, 0.742173, -1.18753)
 transform = Transform3D(0.87733, 0.390557, -0.278849, -0.0959941, 0.712157, 0.695427, 0.470188, -0.583351, 0.662288, -0.238126, 4.4768, -1.53246)
 
 [node name="Block2" parent="assets" instance=ExtResource("1_fb0jj")]
-transform = Transform3D(0.87733, 0.390557, -0.278849, -0.0959941, 0.712157, 0.695427, 0.470188, -0.583351, 0.662288, 1.06712, 4.71248, -1.1799)
+transform = Transform3D(0.87733, 0.390557, -0.278849, 0.409613, -0.912193, 0.0111261, -0.250019, -0.123982, -0.960271, 3.07937, 3.04772, -0.80328)
 
-[node name="icon" type="Sprite3D" parent="assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.811169, 2.74251)
-texture = ExtResource("3_og4qi")
-script = ExtResource("4_x35nm")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1kqlm")

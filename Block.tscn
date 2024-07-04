@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7sonyxom4rb7"]
+[gd_scene load_steps=4 format=3 uid="uid://c7sonyxom4rb7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4fda"]
+albedo_color = Color(0.0752, 0.94, 0.94, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_21bdc"]
+material = SubResource("StandardMaterial3D_c4fda")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_onk4u"]
 
 [node name="Block1" type="RigidBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.485831, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_21bdc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.488822, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_onk4u")
